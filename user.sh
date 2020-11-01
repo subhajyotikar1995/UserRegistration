@@ -2,17 +2,13 @@
 
 shopt -s extglob
 
-echo "Note : 1) Name Start With capital Letter "
-echo "       2) Minimum 3 Characters required "
+regEx="^[a-zA-Z0-9+_.-]+@[a-zA-Z.]+\.+[a-zA-Z]{2,4}$"
 
-regEx="^[[:upper:]][[:alpha:]]{2,56}$"
+read -p "Enter Valid Email-Id : " email
 
-read -p "Enter Last Name : " lastName
-
-if [[ $lastName =~ $regEx ]]; 
+if [[ $email =~ $regEx ]]; 
 then
-        echo "$lastName is Valid "
+        echo "$email is Valid "
 else
-        echo "Wrong Input!! Try Again"
+        echo "Invalid Email-Id !! Try Again"
 fi
-
