@@ -1,15 +1,18 @@
 #! /bin/bash
 
+shopt -s extglob
+
 echo "Note : 1) Name Start With capital Letter "
-echo "       2) Minimum 3 Characters required"
+echo "       2) Minimum 3 Characters required "
 
-read -p "Enter First Name : " firstName
+regEx="^[[:upper:]][[:alpha:]]{2,56}$"
 
-regEx="^[A-Z][a-zA-Z]{2,56}$"
+read -p "Enter Last Name : " lastName
 
-if [[ $firstName =~ $regEx ]];
- then
-        echo "$firstName is Valid Name"
+if [[ $lastName =~ $regEx ]]; 
+then
+        echo "$lastName is Valid "
 else
         echo "Wrong Input!! Try Again"
 fi
+
